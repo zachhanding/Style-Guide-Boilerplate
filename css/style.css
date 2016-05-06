@@ -7,90 +7,134 @@ img, svg, video, audio {
 }
 
 
-/* -------------------------------------------------------------------------
- Alerts
----------------------------------------------------------------------------- */
-/**
- * Alert styles. Your patterns/styles will vary.
- * You should link your main stylesheet up with Style Guide Boilerplate for
- * best results. When you update your site's styles, your style guide will
- * update as well.
- */
-.alert {
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 8px 35px 8px 14px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-.alert-warning {
-  background-color: #fcf8e3;
-  border-color: #fbeed5;
-  color: #8b6d3a;
-}
-
-.alert-error {
-  background-color: #f2dede;
-  border-color: #eed3d7;
-  color: #aa4342;
-}
-
-.alert-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #3c773d;
-}
-
-.alert-info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #2f7090;
-}
-
-
 
 /* -------------------------------------------------------------------------
- Breadcrumbs
+ Accordion
 ---------------------------------------------------------------------------- */
-/**
- * Breadcrumb styles for first pattern. Your patterns/styles will vary.
- * You should link your main stylesheet up with Style Guide Boilerplate for
- * best results. When you update your site's styles, your style guide will
- * update as well.
- */
-.breadcrumb {
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 8px 15px;
+/** Accordion Block **/
+.accordion {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
-.breadcrumb li {
+/** Accordion Elements **/
+.accordion__item {
+  border-bottom: 1px solid black;
+}
+.accordion__title {
+  position: relative;
+  margin: 0;
+  padding: .5rem;
+  font: bold 1rem/1 Arial, sans-serif;
+  background-color: #7E8081;
+  color: white;
+  transition: all .4s;
+}
+.accordion__item--open .accordion__title {
+  background-color: #EF0734;
+}
+
+.accordion__content {
+  padding: 1rem;
+  border-top: 1px solid black;
+}
+
+/** Accordion Modifiers **/
+.accordion--icon .accordion__title {
+  padding-left: 28px;
+}
+
+.accordion--icon .accordion__title:before {
+  content: "\f054";
+  position:absolute;
+  left: 10px;
+  top: 8px;
+  font-family: FontAwesome;
+  transition: transform .4s;
+}
+
+.accordion--icon .accordion__item--open .accordion__title:before {
+  transform: rotate(90deg);
+}
+
+/** Utility Styles **/
+.hidden { display: none; }
+
+
+
+/* -------------------------------------------------------------------------
+ Buttons
+---------------------------------------------------------------------------- */
+.button {
+  position: relative;
   display: inline-block;
-  *display: inline;
-  text-shadow: 0 1px 0 #fff;
-  *zoom: 1;
-}
-
-.breadcrumb li a {
-  color: #007f96;
+  margin: 0;
+  padding: .5rem 1rem;
+  background: #ffffff;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #ddd 100%);
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#ddd 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#ddd 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ddd',GradientType=0 );
+  border: 1px solid #999;
+  border-radius: .5rem;
+  box-shadow: 0 2px 0 0 #333;
+  outline: none;
+  font: 1rem/1.3 Arial, sans-serif;
+  color: #333;
   text-decoration: none;
+  cursor: pointer;
+}
+.button:active {
+  top: 2px;
+  box-shadow: 0 0 0 0;
 }
 
-.breadcrumb li a:hover {
-  color: #004068;
+
+/** Button Elements **/
+.button__icon {
+  margin-right: 5px;
+  vertical-align: text-bottom;
 }
 
-.breadcrumb li .divider {
-  color: #767676;
-  padding: 0 5px;
+
+/** Button Block Modifiers **/
+.button--secondary {
+  background: #ffdd7f;
+  background: -moz-linear-gradient(top,  #ffdd7f 0%, #febf04 100%);
+  background: -webkit-linear-gradient(top,  #ffdd7f 0%,#febf04 100%);
+  background: linear-gradient(to bottom,  #ffdd7f 0%,#febf04 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdd7f', endColorstr='#febf04',GradientType=0 );
+  border-color: #B78703;
 }
 
-.breadcrumb .active {
-  color: #555;
+.button--tertiary {
+  background: #7db9e8;
+  background: -moz-linear-gradient(top,  #7db9e8 0%, #1e5799 100%);
+  background: -webkit-linear-gradient(top,  #7db9e8 0%,#1e5799 100%);
+  background: linear-gradient(to bottom,  #7db9e8 0%,#1e5799 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
+  border-color: #133760;
+  color: white;
+}
+
+.button--lg {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 0 0 #333;
+}
+.button--lg:active {
+  top: 4px;
+  box-shadow: 0 0 0 0;
+}
+
+
+/** Button Element Modifiers **/
+.button__icon--reverse {
+  float: right;
+  margin-top: 2px;
+  margin-left: 10px;
+  margin-right: 0;
+  transform: scaleX(-1);
 }

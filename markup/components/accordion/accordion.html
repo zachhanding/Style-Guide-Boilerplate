@@ -1,0 +1,52 @@
+<h1>Accordion</h1>
+
+<!-- Accordion -->
+<div class="accordion accordion--icon">
+  <div class="accordion__item">
+    <h3 class="accordion__title">House Stark</h3>
+    <div class="accordion__content">
+      House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North rom their seat in Winterfell. It is by far one of the oldest lines of Westerosi nobility, claiming a line of descent stretching back over eight thousand years. The head of the house was the Lord of Winterfell. Before the Targaryen conquest, the leaders of House Stark ruled over the region as the Kings in the North.</div>
+  </div>
+  <div class="accordion__item">
+    <h3 class="accordion__title">House Lannister</h3>
+    <div class="accordion__content">
+      House Lannister of Casterly Rock is one of the Great Houses of Westeros, one of its richest and most powerful families and oldest dynasties. The major characters Jaime, Cersei, and Tyrion and the recurring characters Tywin, Kevan, and Lancel are members of the house. Tywin is the head of House Lannister and Lord of Casterly Rock.
+    </div>
+  </div>
+  <div class="accordion__item">
+    <h3 class="accordion__title">House Tyrell</h3>
+    <div class="accordion__content">
+      House Tyrell of Highgarden is one of the Great Houses of Westeros. It rules over the Reach, a vast, fertile, and heavily-populated region of southwestern Westeros, from their castle-seat, Highgarden. It is currently led by Lord Mace Tyrell, although his mother, the indomitable Olenna Tyrell, still wields considerable influence over the House's affairs and is usually considered the true leader of the family.
+    </div>
+  </div>
+  <div class="accordion__item">
+    <h3 class="accordion__title">House Targaryen</h3>
+    <div class="accordion__content">
+      House Targaryen is a former Great House of Westeros and was the ruling royal House of the Seven Kingdoms for three centuries, before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The few surviving Targaryens fled into exile.
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<!-- JavaScript -->
+<script>
+  window.onload = function() {
+    var accordion__items = document.getElementsByClassName('accordion__item');
+
+    // loop through all items in the accordion list
+    for (i = 0; i < accordion__items.length; i++) {
+      var title = accordion__items[i].children[0];
+      var content = accordion__items[i].children[1];
+      var ii = i;
+
+      content.classList.add("hidden");
+
+      title.onclick = function() {
+        this.nextElementSibling.classList.toggle('hidden');
+        this.parentNode.classList.toggle('accordion__item--open');
+      }
+    }
+  }
+</script>

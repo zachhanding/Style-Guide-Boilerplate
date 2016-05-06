@@ -60,36 +60,27 @@ body {
   padding-right: 0 1rem;
 }
 
-.js .sg-sidebar {
-  opacity: 0;
-  position: absolute;
-  top: -100%;
-  -webkit-transition: opacity 0.6s ease-out;
-     -moz-transition: opacity 0.6s ease-out;
-      -ms-transition: opacity 0.6s ease-out;
-       -o-transition: opacity 0.6s ease-out;
-          transition: opacity 0.6s ease-out;
-}
-
-.js.nav-is-active .sg-sidebar {
-  opacity: 1;
-  position: static;
-}
-
 @media screen and (min-width: 1025px) {
+  .sg-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 56px; /* height of sg-header */
+  }
+
   .sg-sidebar,
   .js .sg-sidebar,
   .js.nav-is-active .sg-sidebar {
+    position: fixed;
+    top: 56px; /* height of sg-header */
     bottom: 0;
-    float: left;
+    /*float: left;*/
     font-size: 100%;
-    opacity: 1;
-    position: absolute;
-    top: 0;
     width: 25%;
   }
 
   .sg-main {
+    margin-top: 56px; /* height of sg-header */
     float: right;
     width: 75%;
   }
@@ -183,6 +174,11 @@ body {
   padding: 0;
 }
 
+.sg-logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .sg-logo-full {
   display: none;
 }
@@ -203,34 +199,6 @@ body {
 
 /* Navigation
 ---------------------------------------------------------------------------- */
-.sg-nav-toggle {
-  background-color: #000;
-  border-radius: 5px;
-  border: 1px solid #7C7C7C;
-  color: #fff;
-  float: right;
-  font-size: 16px;
-  font-size: 1rem;
-  padding: 5px 8px; /* For older browsers */
-  padding: 0.3125rem 0.5rem;
-  text-decoration: none;
-  -webkit-transition: all .15s ease-in;
-     -moz-transition: all .15s ease-in;
-      -ms-transition: all .15s ease-in;
-       -o-transition: all .15s ease-in;
-          transition: all .15s ease-in;
-}
-
-.sg-nav-toggle:hover {
-  border-color: #9c9c9c;
-}
-
-@media screen and (min-width: 1025px) {
-  .sg-nav-toggle {
-    display: none;
-  }
-}
-
 .sg-nav-group,
 .sg-nav-group li {
   margin: 0;
@@ -502,11 +470,6 @@ body {
   position: absolute;
   top: -100%;
   width: 1px;
-  -webkit-transition: opacity 0.6s ease-out;
-     -moz-transition: opacity 0.6s ease-out;
-      -ms-transition: opacity 0.6s ease-out;
-       -o-transition: opacity 0.6s ease-out;
-          transition: opacity 0.6s ease-out;
 }
 
 /* Show source code blocks when active or JS is not enabled */
@@ -514,6 +477,11 @@ body {
   opacity: 1;
   position: relative;
   width: 100%;
+  -webkit-transition: opacity 0.6s ease-out;
+     -moz-transition: opacity 0.6s ease-out;
+      -ms-transition: opacity 0.6s ease-out;
+       -o-transition: opacity 0.6s ease-out;
+          transition: opacity 0.6s ease-out;
 }
 
 /* Videos
